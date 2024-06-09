@@ -1,0 +1,38 @@
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007ffe17e5d404
+R13: 000000000000010c R14: 0000000000000007 R15: 00007ffe17e5db50
+---[ end trace ca1f089f25a0ae6d ]---
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 268 at net/netlink/af_netlink.c:1903 netlink_sendmsg+0x188/0x580 net/netlink/af_netlink.c:1903
+Modules linked in:
+CPU: 0 PID: 268 Comm: sshd Tainted: G        W         5.12.0+ #12
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.13.0-1ubuntu1.1 04/01/2014
+RIP: 0010:netlink_sendmsg+0x188/0x580 net/netlink/af_netlink.c:1903
+Code: e8 5d 7a 43 ff 41 8b 85 44 01 00 00 4c 8b 65 a0 41 bf a6 ff ff ff 8d 50 e0 48 63 d2 4c 39 e2 0f 82 68 01 00 00 e8 38 7a 43 ff <0f> 0b 41 81 fc c0 0e 00 00 0f 86 2c 02 00 00 e8 24 7a 43 ff 45 85
+RSP: 0018:ffffac82401cfd38 EFLAGS: 00010293
+RAX: 0000000000000000 RBX: ffffac82401cfe08 RCX: ffffffff835a85f8
+RDX: ffff9a84832ebd80 RSI: 0000000000000000 RDI: ffffffff834da6d1
+RBP: ffffac82401cfda8 R08: 0000000000000010 R09: 000000000000000c
+R10: 0000000000000000 R11: 0000000000000000 R12: 00000000000000f0
+R13: ffff9a8482e05800 R14: 0000000000000000 R15: 00000000ffffffa6
+FS:  00007f7b04d07900(0000) GS:ffff9a84fdc00000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffed40b6e80 CR3: 0000000006cfa005 CR4: 0000000000770ef0
+PKRU: 55555554
+Call Trace:
+ sock_sendmsg_nosec net/socket.c:654 [inline]
+ sock_sendmsg+0xc5/0xd0 net/socket.c:674
+ __sys_sendto+0x14d/0x1f0 net/socket.c:1977
+ __do_sys_sendto net/socket.c:1989 [inline]
+ __se_sys_sendto net/socket.c:1985 [inline]
+ __x64_sys_sendto+0x2f/0x40 net/socket.c:1985
+ do_syscall_64+0x38/0x90 arch/x86/entry/common.c:46
+ entry_SYSCALL_64_after_hwframe+0x44/0xae
+RIP: 0033:0x7f7b051f7fa6
+Code: 0e 0d 00 f7 d8 64 89 02 48 c7 c0 ff ff ff ff eb b8 0f 1f 00 41 89 ca 64 8b 04 25 18 00 00 00 85 c0 75 11 b8 2c 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 72 c3 90 55 48 83 ec 30 44 89 4c 24 2c 4c 89
+RSP: 002b:00007ffe17e593c8 EFLAGS: 00000246 ORIG_RAX: 000000000000002c
+RAX: ffffffffffffffda RBX: 00000000000000e0 RCX: 00007f7b051f7fa6
+RDX: 00000000000000f0 RSI: 00007ffe17e59400 RDI: 0000000000000005
+RBP: 00000000000000f0 R08: 00007ffe17e593ec R09: 000000000000000c
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000005
+R13: 00007ffe17e59400 R14: 00007ffe17e593ec R15: 0000000000000451
+---[ end trace ca1f089f25a0ae6e ]---

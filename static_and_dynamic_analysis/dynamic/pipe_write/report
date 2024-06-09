@@ -1,0 +1,39 @@
+R10: 000000000000006f R11: 0000000000000246 R12: 0000000000000006
+R13: 00007f73b36a36a0 R14: 0000000000000006 R15: 00007f73b369e880
+---[ end trace 67ba14e85df93414 ]---
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 266 at fs/pipe.c:488 pipe_write+0x4af/0x820 fs/pipe.c:488
+Modules linked in:
+CPU: 0 PID: 266 Comm: sshd Tainted: G        W         5.12.0+ #12
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.13.0-1ubuntu1.1 04/01/2014
+RIP: 0010:pipe_write+0x4af/0x820 fs/pipe.c:488
+Code: 78 02 00 00 85 c0 0f 85 f3 02 00 00 e8 5a b4 de ff 48 8b 83 a8 02 00 00 65 ff 08 e8 4b b4 de ff e9 f2 fb ff ff e8 41 b4 de ff <0f> 0b 31 f6 bf c2 0c 50 00 e8 d3 aa f9 ff 48 89 c3 48 85 c0 0f 84
+RSP: 0018:ffffb25640b67d60 EFLAGS: 00010293
+RAX: 0000000000000000 RBX: 0000000000000000 RCX: ffffffffa91f4bef
+RDX: ffff9bb6c3ea3d80 RSI: 0000000000000000 RDI: ffff9bb6c3e26240
+RBP: ffffb25640b67de8 R08: 0000000000000001 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000000 R12: ffff9bb6c3e26240
+R13: 0000000000000000 R14: 0000000000000000 R15: ffff9bb6c3dcbd00
+FS:  00007f895fe2c900(0000) GS:ffff9bb73dc00000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 000056172e8abe08 CR3: 0000000003d02003 CR4: 0000000000770ef0
+PKRU: 55555554
+Call Trace:
+ call_write_iter include/linux/fs.h:1977 [inline]
+ new_sync_write+0x1a8/0x250 fs/read_write.c:518
+ vfs_write+0x28a/0x340 fs/read_write.c:605
+ ksys_write+0xe9/0x130 fs/read_write.c:658
+ __do_sys_write fs/read_write.c:670 [inline]
+ __se_sys_write fs/read_write.c:667 [inline]
+ __x64_sys_write+0x23/0x30 fs/read_write.c:667
+ do_syscall_64+0x38/0x90 arch/x86/entry/common.c:46
+ entry_SYSCALL_64_after_hwframe+0x44/0xae
+RIP: 0033:0x7f896030b473
+Code: 8b 15 21 2a 0e 00 f7 d8 64 89 02 48 c7 c0 ff ff ff ff eb b7 0f 1f 00 64 8b 04 25 18 00 00 00 85 c0 75 14 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 55 c3 0f 1f 40 00 48 83 ec 28 48 89 54 24 18
+RSP: 002b:00007ffe1df39618 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+RAX: ffffffffffffffda RBX: 00007f895fe2c6f8 RCX: 00007f896030b473
+RDX: 0000000000000001 RSI: 000055bbf1796596 RDI: 0000000000000007
+RBP: 00000000fffffffd R08: 0000000000000000 R09: 0000000000000100
+R10: 0000000000000000 R11: 0000000000000246 R12: 000055bbf17db768
+R13: 0000000000000000 R14: 0000000000000004 R15: 000055bbf1790a80
+---[ end trace 67ba14e85df93415 ]---

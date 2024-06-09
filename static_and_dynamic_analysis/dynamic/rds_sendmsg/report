@@ -1,0 +1,38 @@
+------------[ cut here ]------------
+WARNING: CPU: 1 PID: 23228 at net/rds/send.c:1285 rds_sendmsg+0xe03/0x1440 net/rds/send.c:1285
+Modules linked in:
+CPU: 1 PID: 23228 Comm: syz-executor.6 Not tainted 5.12.0+ #18
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.13.0-1ubuntu1.1 04/01/2014
+RIP: 0010:rds_sendmsg+0xe03/0x1440 net/rds/send.c:1285
+Code: 9d 40 ff ff ff 8b b5 28 ff ff ff 48 89 df e8 b4 ad ff ff 48 89 83 e8 01 00 00 49 89 c4 48 3d 00 f0 ff ff 77 28 e8 5d 19 2a ff <0f> 0b 8b 95 60 ff ff ff 48 8b bd 40 ff ff ff 49 8d 76 10 e8 85 af
+RSP: 0018:ffffb130ca533b90 EFLAGS: 00010286
+RAX: 000000000000010c RBX: ffff92b41e573c00 RCX: ffffffff81f44303
+RDX: 0000000000040000 RSI: ffffb130c47f5000 RDI: 0000000000000020
+RBP: ffffb130ca533c70 R08: 0000000000000400 R09: ffff92b41e573df8
+R10: 0000000000000000 R11: 0000000000000000 R12: ffff92b41e573df8
+R13: ffffb130ca533ce8 R14: ffffb130ca533e90 R15: ffff92b411441540
+FS:  00007faed28c66c0(0000) GS:ffff92b47dd00000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f9fda1766c6 CR3: 000000000549a001 CR4: 0000000000770ee0
+PKRU: 55555554
+Call Trace:
+ sock_sendmsg_nosec net/socket.c:654 [inline]
+ sock_sendmsg+0xc5/0xd0 net/socket.c:674
+ ____sys_sendmsg+0x301/0x370 net/socket.c:2350
+RDS: rds_bind could not find a transport for ::ffff:172.30.0.2, load rds_tcp or rds_rdma?
+ ___sys_sendmsg+0x92/0xd0 net/socket.c:2404
+ __sys_sendmsg+0x88/0x100 net/socket.c:2433
+ __do_sys_sendmsg net/socket.c:2442 [inline]
+ __se_sys_sendmsg net/socket.c:2440 [inline]
+ __x64_sys_sendmsg+0x28/0x30 net/socket.c:2440
+ do_syscall_64+0x38/0x90 arch/x86/entry/common.c:46
+ entry_SYSCALL_64_after_hwframe+0x44/0xae
+RIP: 0033:0x7faed3b44da9
+Code: 28 00 00 00 75 05 48 83 c4 28 c3 e8 e1 20 00 00 90 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b0 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007faed28c60c8 EFLAGS: 00000246 ORIG_RAX: 000000000000002e
+RAX: ffffffffffffffda RBX: 00007faed3c72f80 RCX: 00007faed3b44da9
+RDX: 0000000000000000 RSI: 00000000200038c0 RDI: 0000000000000003
+RBP: 00007faed3b9147a R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 000000000000000b R14: 00007faed3c72f80 R15: 00007ffdc4761488
+---[ end trace 66adac362723fee8 ]---

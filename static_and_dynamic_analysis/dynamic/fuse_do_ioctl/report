@@ -1,0 +1,61 @@
+[   46.981718] IPv6: ADDRCONF(NETDEV_CHANGE): veth1: link becomes ready
+[   46.985164] IPv6: ADDRCONF(NETDEV_CHANGE): veth0: link becomes ready
+[   47.236136] IPv6: ADDRCONF(NETDEV_CHANGE): veth0_to_bridge: link becomes ready
+[   47.237056] IPv6: ADDRCONF(NETDEV_CHANGE): bridge_slave_0: link becomes ready
+[   47.245659] IPv6: ADDRCONF(NETDEV_CHANGE): veth1_to_bridge: link becomes ready
+[   47.247463] IPv6: ADDRCONF(NETDEV_CHANGE): bridge_slave_1: link becomes ready
+[   47.266252] IPv6: ADDRCONF(NETDEV_CHANGE): veth0_to_hsr: link becomes ready
+[   47.267207] IPv6: ADDRCONF(NETDEV_CHANGE): hsr_slave_0: link becomes ready
+[   47.279356] IPv6: ADDRCONF(NETDEV_CHANGE): veth1_to_hsr: link becomes ready
+[   47.280051] IPv6: ADDRCONF(NETDEV_CHANGE): hsr_slave_1: link becomes ready
+[   49.172178] IPv6: ADDRCONF(NETDEV_CHANGE): veth1_virt_wifi: link becomes ready
+[   49.173115] IPv6: ADDRCONF(NETDEV_CHANGE): veth0_virt_wifi: link becomes ready
+[   49.391817] IPv6: ADDRCONF(NETDEV_CHANGE): veth1_vlan: link becomes ready
+[   49.392817] IPv6: ADDRCONF(NETDEV_CHANGE): veth0_vlan: link becomes ready
+[   49.817239] device veth1_vlan entered promiscuous mode
+[   49.832129] IPv6: ADDRCONF(NETDEV_CHANGE): macvlan0: link becomes ready
+[   49.833057] IPv6: ADDRCONF(NETDEV_CHANGE): macvlan1: link becomes ready
+[   49.833881] IPv6: ADDRCONF(NETDEV_CHANGE): veth1_macvtap: link becomes ready
+[   49.834945] IPv6: ADDRCONF(NETDEV_CHANGE): veth0_macvtap: link becomes ready
+[   49.842016] device veth0_macvtap entered promiscuous mode
+[   50.064717] IPv6: ADDRCONF(NETDEV_CHANGE): macvtap0: link becomes ready
+[   50.065668] IPv6: ADDRCONF(NETDEV_CHANGE): batadv_slave_0: link becomes ready
+[   50.066453] IPv6: ADDRCONF(NETDEV_CHANGE): veth0_to_batadv: link becomes ready
+[   50.073938] IPv6: ADDRCONF(NETDEV_CHANGE): batadv_slave_1: link becomes ready
+[   50.075098] IPv6: ADDRCONF(NETDEV_CHANGE): veth1_to_batadv: link becomes ready
+[   51.223787] cgroup: cgroup: disabling cgroup2 socket matching due to net_prio or net_cls activation
+[   51.611236] ------------[ cut here ]------------
+[   51.611483] WARNING: CPU: 0 PID: 559 at fs/fuse/file.c:2814 fuse_do_ioctl+0xef/0xb60
+[   51.612361] Modules linked in:
+[   51.612888] CPU: 0 PID: 559 Comm: syz-executor.1 Not tainted 5.12.0+ #31
+[   51.613082] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.13.0-1ubuntu1.1 04/01/2014
+[   51.613316] RIP: 0010:fuse_do_ioctl+0xef/0xb60
+[   51.613594] Code: 41 83 ce 08 65 48 8b 04 25 c0 7b 01 00 48 8b 40 20 44 89 b5 08 ff ff ff f6 80 d3 3f 00 00 40 0f 85 63 06 00 00 e8 3c
+[   51.614004] RSP: 0018:ffffc90000da3d18 EFLAGS: 00000293
+[   51.614139] RAX: 0000000000000000 RBX: 00000000c018937b RCX: ffffffff815c7d0f
+[   51.614262] RDX: ffff888006145c00 RSI: 0000000000000000 RDI: ffffc90000da3e60
+[   51.614384] RBP: ffffc90000da3e90 R08: 0000000000000010 R09: 0000000000000000
+[   51.614861] R10: 0000000000000000 R11: 0000000000000000 R12: ffff8880061ec800
+[   51.615006] R13: 00000000c018937b R14: 0000000000000010 R15: 00000000200005c0
+[   51.615175] FS:  00007f69cab9b700(0000) GS:ffff88807dc00000(0000) knlGS:0000000000000000
+[   51.615330] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[   51.615448] CR2: 00007f69cb0c0bf0 CR3: 00000000091b4000 CR4: 00000000000006f0
+[   51.615673] Call Trace:
+[   51.616308]  fuse_ioctl_common+0x65/0x90
+[   51.616530]  ? fuse_dir_compat_ioctl+0x80/0x80
+[   51.616656]  fuse_dir_ioctl+0x57/0x80
+[   51.616770]  __x64_sys_ioctl+0xec/0x120
+[   51.616894]  do_syscall_64+0x38/0x90
+[   51.617011]  entry_SYSCALL_64_after_hwframe+0x44/0xae
+[   51.617178] RIP: 0033:0x7f69cb04dc8d
+[   51.617496] Code: c3 e8 17 32 00 00 0f 1f 80 00 00 00 00 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 28
+[   51.617756] RSP: 002b:00007f69cab9abf8 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+[   51.617980] RAX: ffffffffffffffda RBX: 00007f69cb189050 RCX: 00007f69cb04dc8d
+[   51.618105] RDX: 00000000200005c0 RSI: 00000000c018937b RDI: 0000000000000004
+[   51.618231] RBP: 00007f69cb0ab4af R08: 0000000000000000 R09: 0000000000000000
+[   51.618353] R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+[   51.618533] R13: 00007ffc9048e7bf R14: 00007ffc9048e960 R15: 00007f69cab9ad80
+[   51.618758] ---[ end trace a6c196f93b07cc55 ]---
+2024/03/12 15:10:27 executed programs: 2
+[   52.390015] device veth0_macvtap left promiscuous mode
+[   52.390330] device veth1_vlan left promiscuous mode

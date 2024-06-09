@@ -1,0 +1,37 @@
+------------[ cut here ]------------
+WARNING: CPU: 1 PID: 87099 at crypto/algif_skcipher.c:47 skcipher_sendmsg+0x1d/0x50 crypto/algif_skcipher.c:40
+Modules linked in:
+CPU: 1 PID: 87099 Comm: syz-executor.4 Not tainted 5.12.0+ #24
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.13.0-1ubuntu1.1 04/01/2014
+RIP: 0010:skcipher_sendmsg+0x1d/0x50 crypto/algif_skcipher.c:47
+Code: f2 ff ff ff e9 28 fe ff ff cc cc cc cc 0f 1f 44 00 00 55 48 89 e5 41 56 49 89 d6 41 55 49 89 f5 41 54 49 89 fc e8 a3 fc b1 ff <0f> 0b 49 8b 44 24 18 4c 89 f2 4c 89 ee 4c 89 e7 48 8b 80 f8 02 00
+RSP: 0018:ffffb7bf4a88fc60 EFLAGS: 00010282
+RAX: 00000000000000d1 RBX: ffff8c3c194e0c00 RCX: ffffffff816c5f9d
+RDX: 0000000000040000 RSI: ffffb7bf45e31000 RDI: ffff8c3c19eac340
+RBP: ffffb7bf4a88fc78 R08: 0000000020001280 R09: 0000000000000060
+R10: ffff8c3c01042600 R11: 0000000000000000 R12: ffff8c3c19eac340
+R13: ffffb7bf4a88fe90 R14: 00000000000010b9 R15: 00000000000010b9
+FS:  00007f16dcc136c0(0000) GS:ffff8c3c7dd00000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000000020001300 CR3: 000000001947c003 CR4: 0000000000770ee0
+PKRU: 55555554
+Call Trace:
+ sock_sendmsg_nosec net/socket.c:654 [inline]
+ sock_sendmsg+0xc5/0xd0 net/socket.c:674
+ ____sys_sendmsg+0x301/0x370 net/socket.c:2350
+ ___sys_sendmsg+0x92/0xd0 net/socket.c:2404
+ __sys_sendmsg+0x88/0x100 net/socket.c:2433
+ __do_sys_sendmsg net/socket.c:2442 [inline]
+ __se_sys_sendmsg net/socket.c:2440 [inline]
+ __x64_sys_sendmsg+0x28/0x30 net/socket.c:2440
+ do_syscall_64+0x38/0x90 arch/x86/entry/common.c:46
+ entry_SYSCALL_64_after_hwframe+0x44/0xae
+RIP: 0033:0x7f16dde91da9
+Code: 28 00 00 00 75 05 48 83 c4 28 c3 e8 e1 20 00 00 90 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b0 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f16dcc130c8 EFLAGS: 00000246 ORIG_RAX: 000000000000002e
+RAX: ffffffffffffffda RBX: 00007f16ddfbff80 RCX: 00007f16dde91da9
+RDX: 0000000004044001 RSI: 0000000020001300 RDI: 0000000000000004
+RBP: 00007f16ddede47a R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 000000000000000b R14: 00007f16ddfbff80 R15: 00007ffe8276fe18
+---[ end trace c814c724f3f4d9ab ]---

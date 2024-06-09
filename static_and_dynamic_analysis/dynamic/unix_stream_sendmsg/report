@@ -1,0 +1,42 @@
+R10: 0000000000000000 R11: 0000000000000293 R12: 0000000000000044
+R13: 00007ffdd6be13f0 R14: 0000000000000044 R15: 00007f0fcb134880
+---[ end trace a88296519ebb79e5 ]---
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 249 at net/unix/af_unix.c:1874 unix_stream_sendmsg+0x1d6/0x4a0 net/unix/af_unix.c:1872
+Modules linked in:
+CPU: 0 PID: 249 Comm: sshd Tainted: G        W         5.12.0+ #12
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.13.0-1ubuntu1.1 04/01/2014
+RIP: 0010:unix_stream_sendmsg+0x1d6/0x4a0 net/unix/af_unix.c:1874
+Code: 00 41 89 dc 41 81 ec c0 0e 00 00 44 0f 48 e0 48 63 c3 41 81 c4 ff 0f 00 00 41 81 e4 00 f0 ff ff 4d 63 e4 49 39 c4 4c 0f 47 e0 <0f> 0b 41 89 df 44 89 e9 49 63 d4 41 b9 03 00 00 00 45 29 e7 83 e1
+RSP: 0018:ffffa941001dfc88 EFLAGS: 00010293
+RAX: 0000000000000005 RBX: 0000000000000005 RCX: ffffffff9888f528
+RDX: ffff95cf04319ec0 RSI: 0000000000000000 RDI: ffff95cf03338400
+RBP: ffffa941001dfd18 R08: 0000000000000005 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000000 R12: 0000000000000000
+R13: 0000000000000000 R14: ffff95cf03338c00 R15: 0000000000000005
+FS:  00007f5c19694900(0000) GS:ffff95cf7dc00000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000556ff62ddb08 CR3: 0000000003394003 CR4: 0000000000770ef0
+PKRU: 55555554
+Call Trace:
+ sock_sendmsg_nosec net/socket.c:654 [inline]
+ sock_sendmsg+0xc5/0xd0 net/socket.c:674
+ sock_write_iter+0xcb/0x140 net/socket.c:1001
+ call_write_iter include/linux/fs.h:1977 [inline]
+ new_sync_write+0x1a8/0x250 fs/read_write.c:518
+ vfs_write+0x28a/0x340 fs/read_write.c:605
+ ksys_write+0xe9/0x130 fs/read_write.c:658
+ __do_sys_write fs/read_write.c:670 [inline]
+ __se_sys_write fs/read_write.c:667 [inline]
+ __x64_sys_write+0x23/0x30 fs/read_write.c:667
+ do_syscall_64+0x38/0x90 arch/x86/entry/common.c:46
+ entry_SYSCALL_64_after_hwframe+0x44/0xae
+RIP: 0033:0x7f5c19b73473
+Code: 8b 15 21 2a 0e 00 f7 d8 64 89 02 48 c7 c0 ff ff ff ff eb b7 0f 1f 00 64 8b 04 25 18 00 00 00 85 c0 75 14 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 55 c3 0f 1f 40 00 48 83 ec 28 48 89 54 24 18
+RSP: 002b:00007ffca0ab43b8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+RAX: ffffffffffffffda RBX: 0000000000000005 RCX: 00007f5c19b73473
+RDX: 0000000000000005 RSI: 00007ffca0ab4433 RDI: 0000000000000008
+RBP: 00007f5c19b73460 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000556ff47f89d1 R11: 0000000000000246 R12: 0000000000000008
+R13: 00007ffca0ab4433 R14: 0000000000000000 R15: 0000000000000000
+---[ end trace a88296519ebb79e6 ]---

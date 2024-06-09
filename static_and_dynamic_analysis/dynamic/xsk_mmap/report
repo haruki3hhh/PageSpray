@@ -1,0 +1,38 @@
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 5823 at net/xdp/xsk.c:1220 xsk_mmap+0x133/0x1d0 net/xdp/xsk.c:1220
+Modules linked in:
+CPU: 0 PID: 5823 Comm: syz-executor.6 Not tainted 5.12.0+ #17
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.13.0-1ubuntu1.1 04/01/2014
+RIP: 0010:xsk_mmap+0x133/0x1d0 net/xdp/xsk.c:1220
+Code: 8b 03 41 bf 00 10 00 00 a9 00 00 01 00 74 0c e8 73 ea 27 ff 0f b6 4b 51 49 d3 e7 e8 67 ea 27 ff 4d 39 fe 77 77 e8 5d ea 27 ff <0f> 0b 4d 8b 45 48 49 8b 75 00 4c 89 e2 4c 89 f1 4c 89 ef e8 b5 ce
+RSP: 0018:ffffa2e780ae7d00 EFLAGS: 00010286
+RAX: 0000000000000322 RBX: ffffcc63806602c0 RCX: ffffffff81f67203
+RDX: 0000000000040000 RSI: ffffa2e78868c000 RDI: ffff930598b4ef00
+RBP: ffffa2e780ae7d28 R08: 00000000000000c8 R09: 00000000ffffffff
+R10: ffffffffffffffff R11: 0000000000000000 R12: 000000000001980b
+R13: ffff930597ef0960 R14: 0000000000001000 R15: 0000000000001000
+FS:  00007f61f2d836c0(0000) GS:ffff9305fdc00000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000001b33122000 CR3: 0000000018aac005 CR4: 0000000000770ef0
+PKRU: 55555554
+Call Trace:
+ sock_mmap+0x36/0x40 net/socket.c:1253
+ call_mmap include/linux/fs.h:1982 [inline]
+ mmap_region+0x52f/0x8a0 mm/mmap.c:1805
+ do_mmap+0x443/0x6f0 mm/mmap.c:1581
+ vm_mmap_pgoff+0x10d/0x1c0 mm/util.c:519
+ ksys_mmap_pgoff+0x234/0x2c0 mm/mmap.c:1632
+ __do_sys_mmap arch/x86/kernel/sys_x86_64.c:96 [inline]
+ __se_sys_mmap arch/x86/kernel/sys_x86_64.c:89 [inline]
+ __x64_sys_mmap+0x33/0x40 arch/x86/kernel/sys_x86_64.c:89
+ do_syscall_64+0x38/0x90 arch/x86/entry/common.c:46
+ entry_SYSCALL_64_after_hwframe+0x44/0xae
+RIP: 0033:0x7f61f4001da9
+Code: 28 00 00 00 75 05 48 83 c4 28 c3 e8 e1 20 00 00 90 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b0 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f61f2d830c8 EFLAGS: 00000246 ORIG_RAX: 0000000000000009
+RAX: ffffffffffffffda RBX: 00007f61f412ff80 RCX: 00007f61f4001da9
+RDX: 0000000000000000 RSI: 0000000000001000 RDI: 0000000020ffb000
+RBP: 00007f61f404e47a R08: 0000000000000003 R09: 0000000000000000
+R10: 0000000000000011 R11: 0000000000000246 R12: 0000000000000000
+R13: 000000000000000b R14: 00007f61f412ff80 R15: 00007fff193eb188
+---[ end trace 491b2af7026c008d ]---
