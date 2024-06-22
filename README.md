@@ -1,6 +1,8 @@
 # Take a Step Further: Understanding Page Spray in Linux Kernel Exploitation
 ***
-Authors: _[Ziyi Guo](http://ziyiguo.site/), [Dang K Le](https://lkmidas.github.io/about/), [Zhenpeng Lin](https://zplin.me/), [Kyle Zeng](https://www.kylebot.net/), [Ruoyu Wang](https://ruoyuwang.me/), [Tiffany Bao](https://www.tiffanybao.com/), [Yan Shoshitaishvili](https://yancomm.net/), [Adam Doupé](https://adamdoupe.com/), [Xinyu Xing](http://xinyuxing.org/)_
+Authors: 
+
+_[Ziyi Guo](http://ziyiguo.site/), [Dang K Le](https://lkmidas.github.io/about/), [Zhenpeng Lin](https://zplin.me/), [Kyle Zeng](https://www.kylebot.net/), [Ruoyu Wang](https://ruoyuwang.me/), [Tiffany Bao](https://www.tiffanybao.com/), [Yan Shoshitaishvili](https://yancomm.net/), [Adam Doupé](https://adamdoupe.com/), [Xinyu Xing](http://xinyuxing.org/)_
 ***
 Page Spray is a kernel exploitation technique which utilizes Direct Page Allocation and Copy/Remap/Write in kernel to perform page reclaim from Page Allocator and spray evil/crafted data to pages. Page Spray(**"DirtyPage"**) has multiple variants, and can be data-only attack.
 
