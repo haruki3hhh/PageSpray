@@ -1,0 +1,11 @@
+prefix=/var/lib/phoronix-test-suite/installed-tests/pts/apache-2.0.1//httpd_
+exec_prefix=/var/lib/phoronix-test-suite/installed-tests/pts/apache-2.0.1//httpd_
+libdir=${prefix}/lib
+APR_MAJOR_VERSION=1
+includedir=/var/lib/phoronix-test-suite/installed-tests/pts/apache-2.0.1//httpd_/include
+
+Name: APR
+Description: The Apache Portable Runtime library
+Version: 1.7.0
+Libs: -L${libdir} -lapr-${APR_MAJOR_VERSION} -lrt -lcrypt  -lpthread -ldl
+Cflags: -DLINUX -D_REENTRANT -D_GNU_SOURCE -g -O2 -pthread -I${includedir}

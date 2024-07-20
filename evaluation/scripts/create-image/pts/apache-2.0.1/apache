@@ -1,0 +1,3 @@
+#!/bin/sh
+~/go/bin/bombardier $@ > $LOG_FILE 2>&1
+echo $? > ~/test-exit-status

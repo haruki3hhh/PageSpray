@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--Phoronix Test Suite v7.8.0-->
+<?xml-stylesheet type="text/xsl" href="file:///var/lib/phoronix-test-suite/xsl/pts-test-installation-viewer.xsl"?>
+<PhoronixTestSuite>
+  <TestInstallation>
+    <Environment>
+      <Identifier>pts/apache-1.7.2</Identifier>
+      <Version>1.7.2</Version>
+      <CheckSum>075870199c8022bb2cff6bfdefc81a75</CheckSum>
+      <CompilerData>{"compiler-type":"CC","compiler":"gcc","compiler-options":"-shared -fPIC -O2 -pthread"}</CompilerData>
+      <InstallFootnote></InstallFootnote>
+      <SystemIdentifier>MTJ0aCBHZW4gSW50ZWwgQ29yZSBpNy0xMjcwMEhfX0RlYmlhbiBHTlUvTGludXggOV9fR0NDIDYuMy4wIDIwMTcwNTE2X18=</SystemIdentifier>
+    </Environment>
+    <History>
+      <InstallTime>2023-04-17 21:29:18</InstallTime>
+      <InstallTimeLength>52.860327005386</InstallTimeLength>
+      <LastRunTime>0000-00-00 00:00:00</LastRunTime>
+      <TimesRun>0</TimesRun>
+      <AverageRunTime></AverageRunTime>
+      <LatestRunTime></LatestRunTime>
+    </History>
+  </TestInstallation>
+</PhoronixTestSuite>

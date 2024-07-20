@@ -1,0 +1,8 @@
+#! /bin/sh
+#
+# Created by configure
+
+"./configure" \
+"--prefix=/var/lib/phoronix-test-suite/installed-tests/pts/apache-1.7.2//httpd_" \
+"--with-included-apr" \
+"$@"
