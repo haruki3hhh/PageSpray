@@ -1,12 +1,24 @@
 # Take a Step Further: Understanding Page Spray in Linux Kernel Exploitation
-***
-Authors: 
+
+## Authors
 
 [Ziyi Guo](http://ziyiguo.site/), [Dang K Le](https://lkmidas.github.io/about/), [Zhenpeng Lin](https://zplin.me/), [Kyle Zeng](https://www.kylebot.net/), [Ruoyu Wang](https://ruoyuwang.me/), [Tiffany Bao](https://www.tiffanybao.com/), [Yan Shoshitaishvili](https://yancomm.net/), [Adam Doupé](https://adamdoupe.com/), [Xinyu Xing](http://xinyuxing.org/)
-***
+
+## Description
 Page Spray is a kernel exploitation technique which utilizes Direct Page Allocation and Copy/Remap/Write in kernel to perform page reclaim from Page Allocator and spray evil/crafted data to pages. Page Spray(**"DirtyPage"**) has multiple variants, and can be data-only attack.
 
-**USENIX Security Official Link:** https://www.usenix.org/conference/usenixsecurity24/presentation/guo-ziyi
+## Bibtex
+```
+@inproceedings{Guo2024TakeAS,
+  title={Take a Step Further: Understanding Page Spray in Linux Kernel Exploitation},
+  author={Ziyi Guo and Dang K Le and Zhenpeng Lin and Kyle Zeng and Ruoyu Wang and Tiffany Bao and Yan Shoshitaishvili and Adam Doup'e and Xinyu Xing},
+  booktitle = {33rd USENIX Security Symposium (USENIX Security 24)},
+  year={2024},
+}
+```
+
+## Related Links
+**USENIX Security 2024 Official Link:** https://www.usenix.org/conference/usenixsecurity24/presentation/guo-ziyi
 
 **Arxiv Pre-print Link:** https://arxiv.org/abs/2406.02624
 
