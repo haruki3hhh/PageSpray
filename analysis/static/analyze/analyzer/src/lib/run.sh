@@ -1,0 +1,1 @@
+LLVM_SYMBOLIZER_PATH="/usr/bin/llvm-symbolizer-12" ./kpsanalyzer `find /root/page-spray-kanalyzer/bitcode_larger -name "*.c.bc"`
